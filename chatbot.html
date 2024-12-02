@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* Add your CSS styles here */  
+    .cybersecurity-chatbot {
+            position: fixed;
+            bottom: 20px;
+            right:
+
+            /* Chatbot Styles */
+.cybersecurity-chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon i {
+  color: white;
+  font-size: 24px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ff4757;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.chat-container {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-container.active {
+  display: flex;
+}
+
+.chat-header {
+  padding: 15px;
+  background: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-title i {
+  font-size: 20px;
+}
+
+.chat-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #2ecc71;
+  border-radius: 50%;
+}
+
+.minimize-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #1e1e1e;
+}
+
+.message {
+  margin-bottom: 15px;
+  max-width: 80%;
+}
+
+.bot-message {
+  margin-right: auto;
+}
+
+.user-message {
+  margin-left: auto;
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bot-message .message-content {
+  background: #2a2a72;
+  color: white;
+}
+
+.user-message .message-content {
+  background: #009ffd;
+  color: white;
+}
+
+.message-content i {
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #666;
+  margin-top: 5px;
+  display: block;
+}
+
+.chat-input {
+  padding: 15px;
+  background: #1a1a1a;
+  border-top: 1px solid #2a2a2a;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #2a2a2a;
+  padding: 8px 15px;
+  border-radius: 25px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  background: none;
+  color: white;
+  padding: 8px 0;
+  outline: none;
+}
+
+.input-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.attachment-btn, .send-btn {
+  background: none;
+  border: none;
+  color: #009ffd;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.attachment-btn:hover, .send-btn:hover {
+  color: #2ecc71;
+}
+
+.suggestion-chips {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.chip {
+  background: #2a2a72;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+}
+
+.chip:hover {
+  background: #009ffd;
+}
+
+/* Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #2a2a72;
+  border-radius: 3px;
+}
+
+/* Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message {
+  animation: slideIn 0.3s ease forwards;
+}
+/* Responsive Styles */
+    </style>
+</head>
+<body>
+    <!-- Add this just before closing </body> tag -->
+<div class="cybersecurity-chatbot">
+    <div class="chat-icon" id="chatIcon">
+      <i class="fas fa-shield-alt"></i>
+      <span class="notification-dot"></span>
+    </div>
+    
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <div class="chat-title">
+          <i class="fas fa-robot"></i>
+          <span>SecureBot</span>
+        </div>
+        <div class="chat-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Online</span>
+        </div>
+        <button class="minimize-btn" id="minimizeChat">
+          <i class="fas fa-minus"></i>
+        </button>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot-message">
+          <div class="message-content">
+            <i class="fas fa-shield-alt"></i>
+            <p>Welcome! I'm SecureBot, your cybersecurity assistant. How can I help protect your digital assets today?</p>
+          </div>
+          <span class="timestamp">Just now</span>
+        </div>
+      </div>
+      
+      <div class="chat-input">
+        <div class="input-wrapper">
+          <input type="text" id="userInput" placeholder="Type your security question...">
+          <div class="input-actions">
+            <button class="attachment-btn">
+              <i class="fas fa-paperclip"></i>
+            </button>
+            <button class="send-btn" id="sendMessage">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+        <div class="suggestion-chips">
+          <button class="chip">Security Services</button>
+          <button class="chip">Contact Info</button>
+          <button class="chip">Portfolio</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  script src="chatbot.js"></script>
+  <script>// Chatbot functionality
+    document.addEventListener('DOMContentLoaded', () => {
+        const chatIcon = document.getElementById('chatIcon');
+        const chatContainer = document.getElementById('chatContainer');
+        const minimizeChat = document.getElementById('minimizeChat');
+        const userInput = document.getElementById('userInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatMessages = document.getElementById('chatMessages');
+    
+        const botResponses = {
+            services: {
+                keywords: ['services', 'offer', 'provide'],
+                response: "I offer various cybersecurity services including:<br>• Network Security<br>• Vulnerability Assessment<br>• Security Monitoring<br>• Security Training"
+            },
+            contact: {
+                keywords: ['contact', 'reach', 'email', 'phone'],
+                response: "You can reach me at:<br>📧 andilemasebe@gmail.com<br>📱 +27 73 980 0705"
+            },
+            portfolio: {
+                keywords: ['portfolio', 'projects', 'work'],
+                response: "Check out my portfolio section for recent cybersecurity projects and implementations."
+            },
+            greetings: {
+                keywords: ['hi', 'hello', 'hey'],
+                response: "Hello! How can I assist with your cybersecurity needs today?"
+            },
+            default: "I'm here to help with cybersecurity questions. Could you please be more specific?"
+        };
+    
+        function addMessage(message, isBot = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isBot ? 'bot-message' : 'user-message'}`;
+            
+            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            messageDiv.innerHTML = `
+                <div class="message-content">
+                    ${isBot ? '<i class="fas fa-shield-alt"></i>' : ''}
+                    <p>${message}</p>
+                </div>
+                <span class="timestamp">${timestamp}</span>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    
+        function getBotResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            for (const [key, value] of Object.entries(botResponses)) {
+                if (key === 'default') continue;
+                if (value.keywords.some(keyword => message.includes(keyword))) {
+                    return value.response;
+                }
+            }
+            return botResponses.default;
+        }
+    
+        function handleUserInput() {
+            const message = userInput.value.trim();
+            if (!message) return;
+    
+            addMessage(message, false);
+            userInput.value = '';
+    
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response, true);
+            }, 500);
+        }
+    
+        // Event Listeners
+        chatIcon.addEventListener('click', () => {
+            chatContainer.classList.add('active');
+            chatIcon.style.display = 'none';
+        });
+    
+        minimizeChat.addEventListener('click', () => {
+            chatContainer.classList.remove('active');
+            chatIcon.style.display = 'flex';
+        });
+    
+        sendMessage.addEventListener('click', handleUserInput);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleUserInput();
+        });
+    
+        // Suggestion chips functionality
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const chipText = chip.textContent.toLowerCase();
+                userInput.value = chipText;
+                handleUserInput();
+            });
+        });
+    });
+    </script>
+</body>
+</html>
