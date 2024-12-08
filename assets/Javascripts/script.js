@@ -16,20 +16,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           navbar.classList.remove('shrink');
       }
   });
-  
-  const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
+        if (hamburger) {
+          hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+            console.log('Hamburger clicked'); // Debug line
+          });
+        }
 
-document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-  hamburger.classList.remove("active");
-  navLinks.classList.remove("active");
-}));
-
+        document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        }));
+      });
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
@@ -336,5 +339,156 @@ document.addEventListener('DOMContentLoaded', () => {
               }
           });
       });
+  });
+});
+
+
+window.addEventListener('load', () => {
+  const loaderWrapper = document.querySelector('.loader-wrapper');
+  setTimeout(() => {
+    loaderWrapper.classList.add('fade-out');
+    setTimeout(() => {
+      loaderWrapper.style.display = 'none';
+    }, 500);
+  }, 1500);
+});
+
+
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  const params = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value
+  };
+
+  emailjs.send('service_eo2exgl', 'template_q6psvl2', params)
+    .then(function(response) {
+      alert('Message sent successfully!');
+      document.getElementById('contactForm').reset();
+    }, function(error) {
+      alert('Failed to send message. Please try again.');
+    });
+
+  return false;
+}
+
+
+  // Matrix rain effect
+  const canvas = document.getElementById('matrixCanvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Set canvas size
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  
+  // Matrix characters
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+  const fontSize = 14;
+  const columns = canvas.width/fontSize;
+  const drops = [];
+  
+  // Initialize drops
+  for(let i = 0; i < columns; i++) {
+    drops[i] = 1;
+  }
+  
+  function draw() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.fillStyle = '#0F0'; // Matrix green
+    ctx.font = fontSize + 'px monospace';
+  
+    for(let i = 0; i < drops.length; i++) {
+      const text = characters.charAt(Math.floor(Math.random() * characters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      
+      if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+setInterval(draw, 33);
+
+
+
+
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+
+
+  // Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
+window.addEventListener('load', () => {
+  const loaderWrapper = document.querySelector('.loader-wrapper');
+  setTimeout(() => {
+    loaderWrapper.classList.add('fade-out');
+    setTimeout(() => {
+      loaderWrapper.style.display = 'none';
+    }, 700);
+  }, 2500);
+});
+
+
+
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  
+  // Check for saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    darkModeToggle.checked = true;
+  }
+
+  darkModeToggle.addEventListener('change', () => {
+    if (darkModeToggle.checked) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
   });
 });

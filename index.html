@@ -39,6 +39,14 @@
 
 </head>
 <body>
+
+  <!-- <div class="loader-wrapper">
+    <div class="loader">
+      <div class="loader-inner"></div>
+    </div>
+    <div class="loader-text">Loading...</div>
+  </div> -->
+
   <header>
     <nav class="navbar">
       <!-- <div class="logo">M_ANDILE</div> -->
@@ -64,22 +72,47 @@
       <a href="#appointment" class="-btn"></a>
       <!-- <a href="#appointment" class="appointment-btn">.</a> -->
     </nav>
+
+    <!-- <div class="theme-toggles">
+      <div class="toggle-wrapper">
+        <label class="toggle">
+          <span class="toggle-label">Dark Mode</span>
+          <input type="checkbox" id="darkModeToggle">
+          <span class="slider round">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+          </span>
+        </label>
+      </div>
+    </div> -->
+    
   </header>
 
   <main>
     <section id="home" class="hero">
+
+        <canvas id="matrixCanvas"></canvas>
+          <!-- rest of hero content   -->
+
       <div class="hero-content">
         <h1>Hello, I'm <span class="highlight">ANDILE MASEBE</span></h1>
         <!-- <h2>Network Engineer</h2>
         <h2>Cyber Security Analyst</h2> -->
+
+    <!-- Add this right after the h1 in your hero-content div -->
+    <div class="slogan-container">
+      <h2 class="cyber-slogan">Securing Tomorrow's Digital Frontiers Today</h2>
+      <div class="slogan-accent"></div>
+    </div>
         <ul class="timeline-details">
           <li><h2>Network Engineer</h2></li>
           <li><h2>Cyber Security Analyst</h2></li>
         </ul>
-        <p>To work in an environment which encourages me to succeed and grow professionally where I can utilize my skills
+        <!-- <p>To work in an environment which encourages me to succeed and grow professionally where I can utilize my skills
           and knowledge appropriately. I seek challenging opportunities where I can fully use my skills for the success of
           the organization. I have graduated with Diploma in Information Technology.
-          </p>
+          </p> -->
+
         <!-- <p>It's strange as photographers spend years, even an entire lifetime, trying to capture moments that together don't even add up to a couple of hours. Life is like a camera.</p> -->
         <!-- <a href="#get-started" class="cta-btn">Get Started</a> -->
         <div class="cv-download">
@@ -108,26 +141,61 @@
           </a>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="binary-cube-container">
+      <!-- <div class="hero-image">
+        <div class="binary-cube-container"> -->
           <!-- 3D Rotating Cube with Binary Effects -->
-          <div class="cube">
+          <!-- <div class="cube"> -->
             <!-- <div class="face front"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" alt=""></div> -->
-            <div class="face front"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" width="300"height="297" alt="Security Dashboard"></div>
+            <!-- <div class="face front"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" width="300"height="297" alt="Security Dashboard"></div>
             <div class="face back"><img src="https://media.licdn.com/dms/image/v2/D5603AQHLIamW4JQyzg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670005952245?e=1738195200&v=beta&t=J4YwZ-y8n7JBB0qLCT7dQ9yyv8ch5DvkuqtP-etmVY0" alt="Security Dashboard"></div>
             <div class="face right"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" width="300"height="297" alt="Security Dashboard"></div>
             <div class="face left"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" width="300"height="297" alt="Security Dashboard"></div>
             <div class="face top">ANDILE MASEBE</div>
             <div class="face bottom"><img src="C:\Users\Andile Masebe\Pictures\Personal Portifolio\My-Personal-Portifolio-Web\image\grad-andile.jpg" width="300"height="297" alt="Security Dashboard"></div>
-          </div>
+          </div> -->
           <!-- Binary particles will be added by JS -->
-        </div>
+        <!-- </div> -->
         
-        <div class="security-shield">
+        <!-- <div class="security-shield">
           <div class="shield-icon">🛡️</div>
           <div class="binary-stream">010101</div>
         </div>
+      </div> -->
+
+      <!-- Replace the binary-cube-container with this new code -->
+      <div class="rotating-services-container">
+        <div class="circle3d">
+          <!-- Center image as first element -->
+          <div class="service-item center-profile" style="--i:0">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHLIamW4JQyzg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670005952245?e=1738195200&v=beta&t=J4YwZ-y8n7JBB0qLCT7dQ9yyv8ch5DvkuqtP-etmVY0" alt="Profile Image">
+          </div>
+          <div class="service-item" style="--i:1">
+            <i class="fas fa-shield-alt"></i>
+            <span>Network Security</span>
+          </div>
+          <div class="service-item" style="--i:2">
+            <i class="fas fa-lock"></i>
+            <span>Cyber Defense</span>
+          </div>
+          <div class="service-item" style="--i:3">
+            <i class="fas fa-code"></i>
+            <span>Secure Coding</span>
+          </div>
+          <div class="service-item" style="--i:4">
+            <i class="fas fa-bug"></i>
+            <span>Penetration Testing</span>
+          </div>
+          <div class="service-item" style="--i:5">
+            <i class="fas fa-server"></i>
+            <span>System Security</span>
+          </div>
+          <div class="service-item" style="--i:6">
+            <i class="fas fa-user-shield"></i>
+            <span>Identity Protection</span>
+          </div>
+        </div>
       </div>
+
     </section>
 
     
@@ -596,7 +664,7 @@
         </div>
       </div>
 
-      <form class="contact-form">
+      <!-- <form class="contact-form">
         <div class="form-group">
           <input type="text" id="name" required>
           <label for="name">Full Name</label>
@@ -621,7 +689,36 @@
           Send Message
           <i class="fas fa-paper-plane"></i>
         </button>
+      </form> -->
+
+      
+      <form class="contact-form" id="contactForm" onsubmit="return sendEmail(event)">
+        <div class="form-group">
+          <input type="text" id="name" name="name" required>
+          <label for="name">Full Name</label>
+        </div>
+        
+        <div class="form-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email">Email Address</label>
+        </div>
+        
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" required>
+          <label for="subject">Subject</label>
+        </div>
+        
+        <div class="form-group">
+          <textarea id="message" name="message" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        
+        <button type="submit" class="submit-btn" onclick="sendEmail(e)">
+          Send Message
+          <i class="fas fa-paper-plane"></i>
+        </button>
       </form>
+
     </div>
   </div>
 </section>
@@ -719,45 +816,21 @@
 <!-- <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-plane" aria-hidden="true"></i></button> -->
 <!-- <button id="scrollTop" class="scroll-top"><i class="fa-thin fa-circle-up"></i></button> -->
 </main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("HaBVlql7hEiAUSVv3"); // Add your EmailJS public key here
+  })();
+</script>
+
+  <!-- Add before </body> -->
+  <script src="assets/Javascripts/matrix.js"></script>
 </body>
 
 <!-- <script src="script.js"></script> -->
 <script src="Javascripts/script.js"></script>
-
-<script>
-  // Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-</script>
-
-<script>
-// Get the button
-let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
 
 </html>
 
