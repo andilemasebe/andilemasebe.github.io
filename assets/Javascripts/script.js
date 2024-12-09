@@ -343,15 +343,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.addEventListener('load', () => {
-  const loaderWrapper = document.querySelector('.loader-wrapper');
-  setTimeout(() => {
-    loaderWrapper.classList.add('fade-out');
+// window.addEventListener('load', () => {
+//   const loaderWrapper = document.querySelector('.loader-wrapper');
+//   setTimeout(() => {
+//     loaderWrapper.classList.add('fade-out');
+//     setTimeout(() => {
+//       loaderWrapper.style.display = 'none';
+//     }, 500);
+//   }, 1500);
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Get loader element
+  const loader = document.querySelector('.loader-wrapper');
+  
+  // Hide loader when page is fully loaded
+  window.addEventListener('load', () => {
     setTimeout(() => {
-      loaderWrapper.style.display = 'none';
-    }, 500);
-  }, 1500);
+      loader.style.display = 'none';
+      document.body.classList.add('loaded');
+    }, 1000); // 1// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+ second delay before hiding
+  });
 });
+
 
 
 
