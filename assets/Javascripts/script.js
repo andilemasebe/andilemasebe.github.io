@@ -668,3 +668,69 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 });
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Show chatbot popup after 3 seconds of page load
+  setTimeout(() => {
+      const chatContainer = document.querySelector('.chat-container');
+      chatContainer.classList.add('active');
+      
+      // Add welcome message
+      addBotMessage("👋 Hi there! Welcome to my portfolio. I'm here to help you navigate through my work and answer any questions you might have!");
+      
+      // Add suggestion chips
+      addSuggestionChips([
+          "View Projects",
+          "About Me",
+          "Contact Info",
+          "Skills & Experience"
+      ]);
+  }, 3000);
+});
+
+function addBotMessage(message) {
+  const chatMessages = document.querySelector('.chat-messages');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = 'message bot-message';
+  messageDiv.innerHTML = `
+      <div class="message-content">
+          <i class="fas fa-robot"></i>
+          <span>${message}</span>
+      </div>
+      <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+  `;
+  chatMessages.appendChild(messageDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function addSuggestionChips(suggestions) {
+  const suggestionsDiv = document.createElement('div');
+  suggestionsDiv.className = 'suggestion-chips';
+  suggestions.forEach(text => {
+      const chip = document.createElement('button');
+      chip.className = 'chip';
+      chip.textContent = text;
+      chip.onclick = () => handleSuggestionClick(text);
+      suggestionsDiv.appendChild(chip);
+  });
+  document.querySelector('.chat-messages').appendChild(suggestionsDiv);
+}
+
+function handleSuggestionClick(suggestion) {
+  // Handle user clicks on suggestion chips
+  const responses = {
+      "View Projects": "Let me show you my latest projects! You can find them in the Portfolio section.",
+      "About Me": "I'm a passionate developer focused on creating innovative solutions. Check out my About section for more details!",
+      "Contact Info": "You can reach me through the Contact form or connect with me on LinkedIn and GitHub.",
+      "Skills & Experience": "I specialize in web development, mobile apps, and UI/UX design. View my complete skill set in the Skills section!"
+  };
+  
+  addBotMessage(responses[suggestion]);
+}
