@@ -13,6 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="assets/Javascripts/spiderweb.js"></script>
 
 <style>
   
@@ -77,6 +78,8 @@
     <section id="home" class="hero">
 
         <canvas id="matrixCanvas"></canvas>
+        <!-- <canvas id="webCanvas"></canvas> -->
+
       
         <!-- hero content   -->
       <div class="hero-content">
@@ -99,6 +102,34 @@
             Download CV
           </a>
         </div>  -->
+
+        <!-- <button class="view-docs-btn">
+          <i class="fas fa-file-alt"></i>
+          View Documents
+      </button> -->
+      
+      <!-- <div class="docs-modal">
+          <div class="docs-content">
+              <div class="docs-header">
+                  <h3 class="docs-title">My Documents</h3>
+                  <span class="close-docs"><i class="fas fa-times"></i></span>
+              </div>
+              <div class="docs-grid">
+                  <div class="doc-item" onclick="window.open('assets/cv/andile-masebe-cv.pdf')">
+                      <i class="fas fa-file-pdf doc-icon"></i>
+                      <span class="doc-name">Resume</span>
+                  </div>
+                  <div class="doc-item" onclick="window.open('assets/cv/andile-masebe-cv.pdf')">
+                      <i class="fas fa-file-pdf doc-icon"></i>
+                      <span class="doc-name">Portfolio</span>
+                  </div>
+                  <div class="doc-item" onclick="window.open('assets/cv/andile-masebe-cv.pdf')">
+                      <i class="fas fa-certificate doc-icon"></i>
+                      <span class="doc-name">Certificates</span>
+                  </div>
+              </div>
+          </div>
+      </div>       -->
         
         <div class="social-links"> 
           <a href="https://www.linkedin.com/in/andile-masebe-3b768b16b/" target="_blank" class="social-icon">
@@ -134,10 +165,10 @@
       </div> -->
 
       <!-- Replace the binary-cube-container with this new code -->
-      <div class="rotating-services-container">
-        <div class="circle3d">
+      <!-- <div class="rotating-services-container">
+        <div class="circle3d"> -->
           <!-- Center image as first element -->
-          <div class="service-item center-profile" style="--i:0">
+          <!-- <div class="service-item center-profile" style="--i:0">
             <img src="https://media.licdn.com/dms/image/v2/D5603AQHLIamW4JQyzg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670005952245?e=1738195200&v=beta&t=J4YwZ-y8n7JBB0qLCT7dQ9yyv8ch5DvkuqtP-etmVY0" alt="Profile Image">
           </div>
           <div class="service-item" style="--i:1">
@@ -165,6 +196,14 @@
             <span>Identity Protection</span>
           </div>
         </div>
+      </div> -->
+
+      <!-- Replace the rotating-services-container with this profile section -->
+      <div class="profile-container">
+        <div class="profile-frame">
+          <img src="image/grad-andile.jpg" alt="Andile Masebe Profile Photo">
+          <!-- <img src="https://media.licdn.com/dms/image/v2/D5603AQHLIamW4JQyzg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1670005952245?e=1738195200&v=beta&t=J4YwZ-y8n7JBB0qLCT7dQ9yyv8ch5DvkuqtP-etmVY0" alt="Andile Masebe Profile Photo"> -->
+        </div>
       </div>
 
     </section>
@@ -177,7 +216,7 @@
       <p class="about-text">I'm a passionate Cybersecurity Intern with hands-on experience in network security monitoring, vulnerability assessment, and security information and event management (SIEM). I'm currently expanding my knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
       <p class="about-text">I'm also a Network Engineer with a specialization in communication networks. I have completed a diploma in IT communication networks and have hands-on experience in network security, firewall configuration, and network monitoring to detect and prevent unauthorized access.</p>
       <p class="about-text">I'm also a Software Developer with a passion for coding and building secure applications. I have experience in secure coding practices, penetration testing, and system security.</p>
-      
+
       <div class="role-badge">Cybersecurity Intern</div>
       <div class="about-grid">
         <div class="about-text">
@@ -217,61 +256,68 @@
       </div>
 
       <div class="role-badge">Network Engineer</div>
-      
       <div class="about-grid">
         <div class="about-text">
           <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
           <ul class="Juniorise-list">
-            <li>Network Security Monitoring</li>
-            <li>Vulnerability Assessment</li>
-            <li>Security Information and Event Management (SIEM)</li>
-            <li>Incident Response</li>
-            <li>Security Awareness Training</li>
-            <li>Security Policy Development</li>
-          </ul>
-          
+            <li>Network Infrastructure Design & Implementation</li>
+            <li>Router & Switch Configuration</li>
+            <li>Network Monitoring & Troubleshooting</li>
+            <li>Firewall Management</li>
+            <li>Network Security Implementation</li>
+            <li>VLAN Configuration & Management</li>
+          </ul>    
           <div class="current-focus">
             <h3>Current Focus</h3>
-            <p>Actively expanding knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
-          </div>
+            <p>Advancing network infrastructure optimization through implementation of SDN technologies, cloud networking solutions, and automated network management systems. Leading projects in network security hardening and performance enhancement while exploring emerging technologies in 5G and IoT network integration.</p>
+          </div>          
         </div>
         
         <div class="skills-container">
           <h3>Technical Skills</h3>
           <div class="skill-bars">
             <div class="skill">
-              <span class="skill-name">Network Security</span>
+              <span class="skill-name">Network Infrastructure</span>
+              <div class="progress-bar" data-percent="90"></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">Cisco Networking</span>
               <div class="progress-bar" data-percent="85"></div>
             </div>
             <div class="skill">
-              <span class="skill-name">Penetration Testing</span>
-              <div class="progress-bar" data-percent="75"></div>
+              <span class="skill-name">Network Security</span>
+              <div class="progress-bar" data-percent="80"></div>
             </div>
             <div class="skill">
-              <span class="skill-name">Security Tools</span>
+              <span class="skill-name">Firewall Management</span>
+              <div class="progress-bar" data-percent="85"></div>
+            </div>
+            <div class="skill">
+              <span class="skill-name">VLAN Configuration</span>
               <div class="progress-bar" data-percent="80"></div>
             </div>
           </div>
-        </div>
+        </div>        
       </div>
     </div>
-<!--     
-    <div class="role-badge">QE</div>
+
+    <div class="role-badge">Software Developer</div>
+      
     <div class="about-grid">
       <div class="about-text">
-        <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
+        <p class="highlight-text">Full Stack Developer with expertise in:</p>
         <ul class="Juniorise-list">
-          <li>Network Security Monitoring</li>
-          <li>Vulnerability Assessment</li>
-          <li>Security Information and Event Management (SIEM)</li>
-          <li>Incident Response</li>
-          <li>Security Awareness Training</li>
-          <li>Security Policy Development</li>
+          <li>Web Application Development</li>
+          <li>API Development & Integration</li>
+          <li>Database Management</li>
+          <li>Version Control (Git)</li>
+          <li>Agile Development Practices</li>
+          <li>Test-Driven Development</li>
         </ul>
         
         <div class="current-focus">
           <h3>Current Focus</h3>
-          <p>Actively expanding knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
+          <p>Building scalable web applications using modern frameworks and cloud technologies while implementing secure coding practices and exploring emerging development tools and methodologies.</p>
         </div>
       </div>
       
@@ -279,37 +325,93 @@
         <h3>Technical Skills</h3>
         <div class="skill-bars">
           <div class="skill">
-            <span class="skill-name">Network Security</span>
+            <span class="skill-name">JavaScript</span>
             <div class="progress-bar" data-percent="85"></div>
           </div>
           <div class="skill">
-            <span class="skill-name">Penetration Testing</span>
+            <span class="skill-name">C#</span>
+            <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Asp.net/Html</span>
             <div class="progress-bar" data-percent="75"></div>
           </div>
           <div class="skill">
-            <span class="skill-name">Security Tools</span>
+            <span class="skill-name">SQL/MySQL</span>
+            <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">DevOps Tools</span>
+            <div class="progress-bar" data-percent="70"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="role-badge">Quality Engineer</div>
+      
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="highlight-text">Quality Engineering professional specializing in:</p>
+        <ul class="Juniorise-list">
+          <li>Test Automation Framework Design</li>
+          <li>Performance Testing</li>
+          <li>API Testing</li>
+          <li>CI/CD Pipeline Integration</li>
+          <li>Test Strategy Development</li>
+          <li>Defect Management</li>
+        </ul>
+        
+        <div class="current-focus">
+          <h3>Current Focus</h3>
+          <p>Implementing advanced automation frameworks and exploring AI-driven testing methodologies while optimizing test coverage and enhancing quality metrics through innovative testing approaches.</p>
+        </div>
+      </div>
+      
+      <div class="skills-container">
+        <h3>Technical Skills</h3>
+        <div class="skill-bars">
+          <div class="skill">
+            <span class="skill-name">Selenium/Cypress</span>
+            <div class="progress-bar" data-percent="85"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">JMeter/LoadRunner</span>
+            <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Postman/REST Assured</span>
+            <div class="progress-bar" data-percent="85"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Jenkins/GitLab CI</span>
+            <div class="progress-bar" data-percent="75"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Test Management Tools</span>
             <div class="progress-bar" data-percent="80"></div>
           </div>
         </div>
       </div>
     </div>
     
-    <div class="role-badge">RPA (Robotic Process Automation)</div>
+    <div class="role-badge">RPA Developer</div>
+      
     <div class="about-grid">
       <div class="about-text">
-        <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
+        <p class="highlight-text">RPA Developer with expertise in:</p>
         <ul class="Juniorise-list">
-          <li>Network Security Monitoring</li>
-          <li>Vulnerability Assessment</li>
-          <li>Security Information and Event Management (SIEM)</li>
-          <li>Incident Response</li>
-          <li>Security Awareness Training</li>
-          <li>Security Policy Development</li>
+          <li>Process Analysis & Optimization</li>
+          <li>Bot Development & Deployment</li>
+          <li>Workflow Automation</li>
+          <li>Exception Handling</li>
+          <li>Business Process Mapping</li>
+          <li>Integration with Enterprise Systems</li>
         </ul>
         
         <div class="current-focus">
           <h3>Current Focus</h3>
-          <p>Actively expanding knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
+          <p>Developing intelligent automation solutions using advanced RPA tools while implementing cognitive capabilities and exploring machine learning integration for enhanced process automation.</p>
         </div>
       </div>
       
@@ -317,60 +419,29 @@
         <h3>Technical Skills</h3>
         <div class="skill-bars">
           <div class="skill">
-            <span class="skill-name">Network Security</span>
+            <span class="skill-name">UiPath</span>
             <div class="progress-bar" data-percent="85"></div>
           </div>
           <div class="skill">
-            <span class="skill-name">Penetration Testing</span>
+            <span class="skill-name">Blue Prism</span>
+            <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Automation Anywhere</span>
             <div class="progress-bar" data-percent="75"></div>
           </div>
           <div class="skill">
-            <span class="skill-name">Security Tools</span>
+            <span class="skill-name">Process Studio</span>
             <div class="progress-bar" data-percent="80"></div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">OCR Technologies</span>
+            <div class="progress-bar" data-percent="75"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="role-badge">Software Developer</div>
-      
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
-          <ul class="Juniorise-list">
-            <li>Network Security Monitoring</li>
-            <li>Vulnerability Assessment</li>
-            <li>Security Information and Event Management (SIEM)</li>
-            <li>Incident Response</li>
-            <li>Security Awareness Training</li>
-            <li>Security Policy Development</li>
-          </ul>
-          
-          <div class="current-focus">
-            <h3>Current Focus</h3>
-            <p>Actively expanding knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
-          </div>
-        </div>
-        
-        <div class="skills-container">
-          <h3>Technical Skills</h3>
-          <div class="skill-bars">
-            <div class="skill">
-              <span class="skill-name">Network Security</span>
-              <div class="progress-bar" data-percent="85"></div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Penetration Testing</span>
-              <div class="progress-bar" data-percent="75"></div>
-            </div>
-            <div class="skill">
-              <span class="skill-name">Security Tools</span>
-              <div class="progress-bar" data-percent="80"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </section>
 
@@ -396,7 +467,7 @@
         </div>
       </div>
 
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-header">
@@ -411,9 +482,9 @@
             <li>Completed 5 major security projects</li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
-      <div class="timeline-item">
+      <!-- <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-header">
@@ -428,13 +499,13 @@
             <li>CEH (Certified Ethical Hacker) in progress</li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-header">
-            <i class="fas fa-certificate"></i>
+            <i class="fas fa-graduation-cap"></i>
             <h3>Public Managemant N6</h3>
           </div>
           <p class="timeline-institution">Ingwe TVET College</p>
@@ -452,7 +523,8 @@
 
 <section id="services" class="services-section">
   <div class="services-container">
-    <h2>Services & Juniorise</h2>
+    <h2>Services</h2>
+    <!-- <h2>Services & Juniorise</h2> -->
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">
@@ -584,7 +656,7 @@
   </div>
 
   <!-- Add these inside the portfolio-grid div -->
-<div class="portfolio-item security">
+<!-- <div class="portfolio-item security">
   <div class="portfolio-content">
     <img src="https://images.pexels.com/photos/27742642/pexels-photo-27742642/free-photo-of-a-person-s-finger-is-touching-a-tablet-screen.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Network Security Analysis">
     <div class="portfolio-overlay">
@@ -598,9 +670,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="portfolio-item security">
+<!-- <div class="portfolio-item security">
   <div class="portfolio-content">
     <img src="https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Security Dashboard">
     <div class="portfolio-overlay">
@@ -614,9 +686,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="portfolio-item security">
+<!-- <div class="portfolio-item security">
   <div class="portfolio-content">
     <img src="https://images.pexels.com/photos/27904906/pexels-photo-27904906/free-photo-of-surveillance-web-cameras-observing-computer-mouse-activity.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Malware Analysis">
     <div class="portfolio-overlay">
@@ -630,9 +702,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="portfolio-item security">
+<!-- <div class="portfolio-item security">
   <div class="portfolio-content">
     <img src="https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vulnerability Scanner">
     <div class="portfolio-overlay">
@@ -646,9 +718,66 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div class="portfolio-item security"> </div>
 </section>
+
+<!-- <section id="portfolio" class="portfolio-section"> -->
+  <!-- Filter Buttons -->
+  <!-- <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="web">Web Development</button>
+    <button class="filter-btn" data-filter="app">Mobile Apps</button>
+    <button class="filter-btn" data-filter="design">UI/UX Design</button>
+</div>
+
+<div class="portfolio-grid"> -->
+    <!-- Web Development Projects -->
+    <!-- <div class="portfolio-item" data-category="web">
+        <div class="portfolio-content">
+            <img src="path/to/web-project1.jpg" alt="Web Project 1">
+            <div class="portfolio-overlay">
+                <h3>Web Project 1</h3>
+                <p>Modern web application built with React</p>
+                <div class="portfolio-links">
+                    <a href="#" class="view-project">Live Demo</a>
+                    <a href="#" class="github-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Mobile App Projects -->
+    <!-- <div class="portfolio-item" data-category="app">
+        <div class="portfolio-content">
+            <img src="path/to/app-project1.jpg" alt="App Project 1">
+            <div class="portfolio-overlay">
+                <h3>Mobile App 1</h3>
+                <p>Cross-platform mobile application</p>
+                <div class="portfolio-links">
+                    <a href="#" class="view-project">View Details</a>
+                    <a href="#" class="github-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Design Projects -->
+    <!-- <div class="portfolio-item" data-category="design">
+        <div class="portfolio-content">
+            <img src="path/to/design-project1.jpg" alt="Design Project 1">
+            <div class="portfolio-overlay">
+                <h3>UI/UX Design 1</h3>
+                <p>Modern interface design for web platform</p>
+                <div class="portfolio-links">
+                    <a href="#" class="view-project">View Design</a>
+                    <a href="#" class="github-link">Source</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section> -->
 
 <section id="awards" class="awards-section">
   <div class="awards-container">
@@ -700,7 +829,7 @@
         </div>
       </div>
 
-      <div class="award-card">
+      <!-- <div class="award-card">
         <div class="award-icon">
           <i class="fas fa-medal"></i>
         </div>
@@ -713,7 +842,7 @@
             <span>Top Performer</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -888,6 +1017,63 @@
 
 <!-- <script src="script.js"></script> -->
 <script src="Javascripts/script.js"></script>
+
+<script>
+  const viewDocsBtn = document.querySelector('.view-docs-btn');
+  const docsModal = document.querySelector('.docs-modal');
+  const closeDocsBtn = document.querySelector('.close-docs');
+  
+  viewDocsBtn.addEventListener('click', () => {
+      docsModal.classList.add('active');
+  });
+  
+  closeDocsBtn.addEventListener('click', () => {
+      docsModal.classList.remove('active');
+  });
+  
+  // Close modal when clicking outside
+  window.addEventListener('click', (e) => {
+      if (e.target === docsModal) {
+          docsModal.classList.remove('active');
+      }
+  });
+  
+  // Prevent modal close when clicking inside modal content
+  docsModal.querySelector('.docs-content').addEventListener('click', (e) => {
+      e.stopPropagation();
+  });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    // Show all items initially
+    portfolioItems.forEach(item => item.classList.add('show'));
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const filterValue = button.getAttribute('data-filter');
+
+            // Filter items
+            portfolioItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show');
+                }
+            });
+        });
+    });
+});
+// Add this script to your HTML file
+  </script>
+  
 
 </html>
 

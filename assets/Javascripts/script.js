@@ -1,13 +1,25 @@
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+// Smooth scrolling navigation with slower animation
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    
+    // Increased duration for smoother scroll
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      duration: 2000 // Longer duration
     });
+
+    // Extended visual feedback timing
+    targetSection.classList.add('active-section');
+    setTimeout(() => {
+      targetSection.classList.remove('active-section'); 
+    }, 2000); // Increased from 1000ms to 2000ms
   });
-  
+});  
   window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
       if (window.scrollY > 50) {
@@ -380,7 +392,7 @@ function topFunction() {
         behavior: 'smooth'
     });
 }
- second delay before hiding
+ 
   });
 });
 
@@ -522,5 +534,137 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('dark-theme');
       localStorage.setItem('theme', 'light');
     }
+  });
+});
+
+
+
+document.querySelector('.view-docs-btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('.docs-modal').classList.add('active');
+});
+
+document.querySelector('.close-docs').addEventListener('click', () => {
+  document.querySelector('.docs-modal').classList.remove('active');
+});
+
+
+
+// Portfolio filtering functionality
+
+const viewDocsBtn = document.querySelector('.view-docs-btn');
+const docsModal = document.querySelector('.docs-modal');
+const closeDocsBtn = document.querySelector('.close-docs');
+
+viewDocsBtn.addEventListener('click', () => {
+    docsModal.classList.add('active');
+});
+
+closeDocsBtn.addEventListener('click', () => {
+    docsModal.classList.remove('active');
+});
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === docsModal) {
+        docsModal.classList.remove('active');
+    }
+});
+
+// Prevent modal close when clicking inside modal content
+docsModal.querySelector('.docs-content').addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+          
+          const filterValue = button.getAttribute('data-filter');
+
+          portfolioItems.forEach(item => {
+              if (filterValue === 'all') {
+                  item.style.display = 'block';
+                  item.classList.add('show');
+              } else if (item.getAttribute('data-category') === filterValue) {
+                  item.style.display = 'block';
+                  item.classList.add('show');
+              } else {
+                  item.style.display = 'none';
+                  item.classList.remove('show');
+              }
+          });
+      });
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  // Show all items initially
+  portfolioItems.forEach(item => item.classList.add('show'));
+
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          const filterValue = button.getAttribute('data-filter');
+
+          // Filter items
+          portfolioItems.forEach(item => {
+              const itemCategory = item.getAttribute('data-category');
+              if (filterValue === 'all' || filterValue === itemCategory) {
+                  item.classList.add('show');
+              } else {
+                  item.classList.remove('show');
+              }
+          });
+      });
+  });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  // Function to filter items
+  const filterItems = (filterValue) => {
+      portfolioItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          if (filterValue === 'all' || filterValue === itemCategory) {
+              item.classList.add('show');
+          } else {
+              item.classList.remove('show');
+          }
+      });
+  };
+
+  // Initial filter - show first category
+  const firstButton = filterButtons[0];
+  firstButton.classList.add('active');
+  filterItems(firstButton.getAttribute('data-filter'));
+
+  // Click handlers for filter buttons
+  filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          filterItems(button.getAttribute('data-filter'));
+      });
   });
 });
