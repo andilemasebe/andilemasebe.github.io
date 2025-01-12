@@ -8,7 +8,7 @@
   <meta name="keywords" content="network engineer, cybersecurit, rpa, qe, web developer, software engineer, portfolio, projects">
   <meta name="author" content="Andile Masebe">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andile Masebe | Portfolio</title>
+  <!-- <title>Andile Masebe | Portfolio</title> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- <link rel="stylesheet" href="styles.css"> -->
@@ -911,7 +911,28 @@
           <i class="fas fa-paper-plane"></i>
         </button>
       </form>
+    </div>
+  </div>
 
+    <!-- <div class="cyber-modal" id="cyberModal">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h3 class="modal-title">Welcome to My Portfolio</h3>
+              <span class="close-modal"><i class="fas fa-times"></i></span>
+          </div>
+          <div class="modal-body">
+              <p>Exploring the digital frontier through innovative solutions.</p>
+          </div>
+      </div>
+  </div> -->
+
+
+  <div class="success-modal" id="successModal">
+    <div class="success-content">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h3 class="success-message">Message Sent Successfully!</h3>
+        <p class="success-details">Thank you for reaching out. I'll get back to you soon.</p>
+        <button class="success-btn" onclick="closeSuccessModal()">Got it!</button>
     </div>
   </div>
 </section>
@@ -1082,6 +1103,48 @@
     });
 });
 // Add this script to your HTML file
+
+// Get form and modal elements
+const contactForm = document.querySelector('.contact-form');
+const successModal = document.querySelector('.success-modal');
+const modalCloseBtn = document.querySelector('.success-btn');
+
+// Form submission handler
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    const formData = new FormData(contactForm);
+    let isValid = true;
+    
+    formData.forEach(value => {
+        if (!value.trim()) isValid = false;
+    });
+    
+    if (!isValid) {
+        alert('Please fill all fields');
+        return;
+    }
+    
+    // Show success modal
+    successModal.style.display = 'flex';
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Close modal on button click
+modalCloseBtn.addEventListener('click', () => {
+    successModal.style.display = 'none';
+});
+
+// Close modal on outside click
+window.addEventListener('click', (e) => {
+    if (e.target === successModal) {
+        successModal.style.display = 'none';
+    }
+});
+
   </script>
   
 

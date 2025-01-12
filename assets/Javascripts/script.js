@@ -734,3 +734,261 @@ function handleSuggestionClick(suggestion) {
   
   addBotMessage(responses[suggestion]);
 }
+
+
+
+
+
+// Form submission handling with POST method
+document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  try {
+      const formData = new FormData(e.target);
+      const response = await fetch('/submit-form', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
+      });
+      
+      if (response.ok) {
+          showSuccessMessage('Message sent successfully!');
+      }
+  } catch (error) {
+      showErrorMessage('Failed to send message');
+  }
+});
+
+// GET method for fetching portfolio items
+async function fetchPortfolioItems() {
+  const response = await fetch('/api/portfolio-items', {
+      method: 'GET',
+      headers: {
+          'Accept': 'application/json'
+      }
+  });
+  return response.json();
+}
+
+// PUT method for updating profile info
+async function updateProfile(profileData) {
+  const response = await fetch('/api/profile', {
+      method: 'PUT',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(profileData)
+  });
+  return response.json();
+}
+
+// DELETE method for removing portfolio items
+async function deletePortfolioItem(itemId) {
+  const response = await fetch(`/api/portfolio/${itemId}`, {
+      method: 'DELETE'
+  });
+  return response.ok;
+}
+
+
+
+
+
+
+// Add this validation function
+function validateForm() {
+  const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
+  let isValid = true;
+  
+  formInputs.forEach(input => {
+      if (!input.value.trim()) {
+          isValid = false;
+          showValidationMessage();
+      }
+  });
+  
+  return isValid;
+}
+
+// Add the validation message popup
+function showValidationMessage() {
+  const validationPopup = document.createElement('div');
+  validationPopup.className = 'validation-popup';
+  validationPopup.innerHTML = `
+      <i class="fas fa-exclamation-circle"></i>
+      <span>Please fill in all fields</span>
+  `;
+  document.body.appendChild(validationPopup);
+  
+  setTimeout(() => {
+      validationPopup.remove();
+  }, 3000);
+}
+
+
+
+
+const modal = document.getElementById('cyberModal');
+const closeBtn = document.querySelector('.close-modal');
+
+function showModal() {
+    modal.style.display = 'flex';
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+closeBtn.addEventListener('click', closeModal);
+
+// Close when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Show modal on page load
+document.addEventListener('DOMContentLoaded', showModal);
+
+
+
+
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Form validation
+  const inputs = this.querySelectorAll('input, textarea');
+  let isValid = true;
+  
+  inputs.forEach(input => {
+      if (!input.value.trim()) {
+          isValid = false;
+      }
+  });
+  
+  if (!isValid) {
+      alert('Please fill in all fields');
+      return;
+  }
+  
+  // Show success modal
+  document.querySelector('.success-modal').style.display = 'flex';
+  
+  // Clear form
+  this.reset();
+});
+
+// Close modal when clicking the button
+document.querySelector('.success-btn').addEventListener('click', function() {
+  document.querySelector('.success-modal').style.display = 'none';
+});
+
+// Close modal when clicking outside
+document.querySelector('.success-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+      this.style.display = 'none';
+  }
+});
+
+
+// Get form and modal elements
+const contactForm = document.querySelector('.contact-form');
+const successModal = document.querySelector('.success-modal');
+const modalCloseBtn = document.querySelector('.success-btn');
+
+// Form submission handler
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    const formData = new FormData(contactForm);
+    let isValid = true;
+    
+    formData.forEach(value => {
+        if (!value.trim()) isValid = false;
+    });
+    
+    if (!isValid) {
+        alert('Please fill all fields');
+        return;
+    }
+    
+    // Show success modal
+    successModal.style.display = 'flex';
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Close modal on button click
+modalCloseBtn.addEventListener('click', () => {
+    successModal.style.display = 'none';
+});
+
+// Close modal on outside click
+window.addEventListener('click', (e) => {
+    if (e.target === successModal) {
+        successModal.style.display = 'none';
+    }
+});
+
+
+
+
+
+
+
+// API Configuration
+const API_BASE_URL = 'https://api.andilemasebe.github.io/';
+
+// Fetch Portfolio Projects
+async function fetchProjects() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/projects`);
+        const data = await response.json();
+        displayProjects(data);
+    } catch (error) {
+        console.log('Error fetching projects:', error);
+    }
+}
+
+// Display Projects in Portfolio Grid
+function displayProjects(projects) {
+    const portfolioGrid = document.querySelector('.portfolio-grid');
+    
+    projects.forEach(project => {
+        const projectElement = `
+            <div class="portfolio-item" data-category="${project.category}">
+                <div class="portfolio-content">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="portfolio-overlay">
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <div class="portfolio-links">
+                            <a href="${project.liveDemo}" class="view-project">Live Demo</a>
+                            <a href="${project.github}" class="github-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        portfolioGrid.innerHTML += projectElement;
+    });
+}
+
+// Filter Projects by Category
+async function filterProjects(category) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/projects?category=${category}`);
+        const data = await response.json();
+        displayProjects(data);
+    } catch (error) {
+        console.log('Error filtering projects:', error);
+    }
+}
+
+// Initialize Portfolio
+document.addEventListener('DOMContentLoaded', fetchProjects);
