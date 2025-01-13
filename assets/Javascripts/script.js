@@ -992,3 +992,37 @@ async function filterProjects(category) {
 
 // Initialize Portfolio
 document.addEventListener('DOMContentLoaded', fetchProjects);
+
+
+
+
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: "0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          if (entry.target.querySelectorAll('.service-card').length) {
+              entry.target.querySelectorAll('.service-card').forEach((card, index) => {
+                  setTimeout(() => {
+                      card.classList.add('animate');
+                  }, index * 200);
+              });
+          }
+          if (entry.target.querySelectorAll('.portfolio-item').length) {
+              entry.target.querySelectorAll('.portfolio-item').forEach((item, index) => {
+                  setTimeout(() => {
+                      item.classList.add('animate');
+                  }, index * 150);
+              });
+          }
+      }
+  });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+  observer.observe(section);
+});

@@ -75,7 +75,11 @@
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <!-- <li><a href="#skills">Skills</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li> -->
         <!-- <li><a href="#awards">Awards</a></li> -->
         <li><a href="#contacts">Contacts</a></li>
       </ul>
@@ -223,14 +227,16 @@
   <div class="about-container">
     <div class="about-content">
       <h2>About Me</h2>
-      <p class="about-text">I'm a passionate Cybersecurity Intern with hands-on experience in network security monitoring, vulnerability assessment, and security information and event management (SIEM). I'm currently expanding my knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
+      <p class="about-text">I'm a passionate Cybersecurity Intern  in network security monitoring, vulnerability assessment, and security information and event management (SIEM). I'm currently expanding my knowledge in threat detection, digital forensics, and cloud security while contributing to real-world security projects.</p>
       <p class="about-text">I'm also a Network Engineer with a specialization in communication networks. I have completed a diploma in IT communication networks and have hands-on experience in network security, firewall configuration, and network monitoring to detect and prevent unauthorized access.</p>
-      <p class="about-text">I'm also a Software Developer with a passion for coding and building secure applications. I have experience in secure coding practices, penetration testing, and system security.</p>
+      <p class="about-text">I'm also a Software Developer with a passion for coding and building secure applications. I have experience in secure coding practices using C# as Programming language, Robotic Process Automation, Test Automation using Java as testing tool and Manual Testing.</p>
+
+      <!-- <p class="about-text">I'm also a Software Developer with a passion for coding and building secure applications. I have experience in secure coding practices, Robotic Process Automation, Test Automation using Java as testing tool, Manual Testing, penetration testing, and system security.</p> -->
 
       <div class="role-badge">Cybersecurity Intern</div>
       <div class="about-grid">
         <div class="about-text">
-          <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
+          <p class="highlight-text">Passionate Cybersecurity Intern  in:</p>
           <ul class="Juniorise-list">
             <li>Network Security Monitoring</li>
             <li>Vulnerability Assessment</li>
@@ -268,7 +274,7 @@
       <div class="role-badge">Network Engineer</div>
       <div class="about-grid">
         <div class="about-text">
-          <p class="highlight-text">Passionate Cybersecurity Intern with hands-on experience in:</p>
+          <p class="highlight-text">Passionate Cybersecurity Intern  in:</p>
           <ul class="Juniorise-list">
             <li>Network Infrastructure Design & Implementation</li>
             <li>Router & Switch Configuration</li>
@@ -433,7 +439,7 @@
             <div class="progress-bar" data-percent="85"></div>
           </div>
           <div class="skill">
-            <span class="skill-name">Blue Prism</span>
+            <!-- <span class="skill-name">Blue Prism</span> -->
             <div class="progress-bar" data-percent="80"></div>
           </div>
           <div class="skill">
@@ -511,22 +517,7 @@
         </div>
       </div> -->
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-header">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>Public Managemant N6</h3>
-          </div>
-          <p class="timeline-institution">Ingwe TVET College</p>
-          <p class="timeline-date">2016 - 2017</p>
-          <ul class="timeline-details">
-            <li>Specialization in Public Administration</li>
-            <!-- <li>Practical security tools and techniques</li>
-            <li>Completed 5 major security projects</li> -->
-          </ul>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -605,16 +596,105 @@
 
 <section id="portfolio" class="portfolio-section">
   <div class="portfolio-container">
-    <h2>Portfolio Projects</h2>
+    <h2>Projects</h2>
     
     <div class="portfolio-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="security">Security Analysis</button>
+      <!-- <button class="filter-btn active" data-filter="all">All</button> -->
+      <!-- <button class="filter-btn" data-filter="security">Security Analysis</button>
       <button class="filter-btn" data-filter="network">Network Projects</button>
-      <button class="filter-btn" data-filter="tools">Security Tools</button>
+      <button class="filter-btn" data-filter="tools">Security Tools</button> -->
+
+      <!-- <button class="filter-btn" data-filter="wireshark">Wireshark</button>
+      <button class="filter-btn" data-filter="python">Introduction to Python</button>
+      <button class="filter-btn" data-filter="nmap">Nmap</button>
+      <button class="filter-btn" data-filter="nmap">Nessus Essentials & Metasploit</button> -->
+      <!-- <button class="filter-btn" data-filter="nmap">Nmap</button>
+      <button class="filter-btn" data-filter="nmap">Nmap</button> -->
     </div>
 
+    <div class="portfolio-filters">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="wireshark">Network Analysis</button>
+      <button class="filter-btn" data-filter="python">Python Projects</button>
+      <button class="filter-btn" data-filter="nmap">Security Scanning</button>
+      <button class="filter-btn" data-filter="automation">Test Automation</button>
+      <button class="filter-btn" data-filter="rpa">RPA Solutions</button>
+      <button class="filter-btn" data-filter="web">Web Development</button>
+    </div>
+    
+
     <div class="portfolio-grid">
+      <!-- Wireshark Network Analysis Project -->
+      <div class="portfolio-item wireshark">
+        <div class="portfolio-content">
+          <img src="image/wire.jpg" alt="Wireshark Network Analysis">
+          <div class="portfolio-overlay">
+            <h3>Network Protocol Analysis with Wireshark</h3>
+            <p>Analyzed network traffic patterns and security implications of TCP/IP, UDP, HTTP/S protocols using Wireshark. Documented port scanning and traffic analysis findings.</p>
+            <div class="portfolio-links">
+              <a href="#" class="view-project">View Analysis</a>
+              <a href="https://github.com/andilemasebe" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Python Cybersecurity Project -->
+      <div class="portfolio-item python">
+        <div class="portfolio-content">
+          <img src="https://images.pexels.com/photos/5240541/pexels-photo-5240541.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="Python Security Tools">
+          <div class="portfolio-overlay">
+            <h3>Python Security Automation Tools</h3>
+            <p>Developed Python scripts for file analysis, network programming, and security automation tasks. Implemented socket programming for network applications.</p>
+            <div class="portfolio-links">
+              <a href="#" class="view-project">View Project</a>
+              <a href="https://github.com/andilemasebe" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Nmap Scanning Project -->
+      <div class="portfolio-item nmap">
+        <div class="portfolio-content">
+          <img src="image/nessus.jfif" alt="Nmap Network Scanning">
+          <div class="portfolio-overlay">
+            <h3>Network Vulnerability Scanner</h3>
+            <p>Created automated Nmap scripts for network scanning and vulnerability assessment. Implemented port scanning and service detection features.</p>
+            <div class="portfolio-links">
+              <a href="#" class="view-project">View Scanner</a>
+              <a href="https://github.com/andilemasebe" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nessus & Metasploit Project -->
+      <div class="portfolio-item security">
+        <div class="portfolio-content">
+          <img src="image/micro.jpeg" alt="Vulnerability Assessment">
+          <div class="portfolio-overlay">
+            <h3>Advanced Vulnerability Assessment</h3>
+            <p>Conducted comprehensive vulnerability assessments using Nessus Essentials and Metasploit. Documented security findings and remediation strategies.</p>
+            <div class="portfolio-links">
+              <a href="#" class="view-project">View Assessment</a>
+            <a href="https://github.com/andilemasebe/vulnerability-assessment" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- <div class="portfolio-grid">
       <div class="portfolio-item security">
         <div class="portfolio-content">
           <img src="https://images.pexels.com/photos/6963098/pexels-photo-6963098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vulnerability Assessment Project">
@@ -663,7 +743,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Add these inside the portfolio-grid div -->
 <!-- <div class="portfolio-item security">
@@ -856,6 +936,101 @@
     <!-- </div>
   </div>
 </section> -->
+
+
+
+<section id="experience" class="services-section">
+  <div class="services-container">
+    <h2>Professional Experience</h2>
+    <div class="services-grid">
+      
+      <!-- RPA Experience -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>RPA Development</h3>
+        <p>Automation expert specializing in UiPath for enterprise process automation.</p>
+        <ul class="service-list">
+          <li>Process Analysis & Optimization</li>
+          <li>Bot Development & Deployment</li>
+          <li>Workflow Automation</li>
+          <li>Enterprise Integration</li>
+        </ul>
+        <div class="tech-badges">
+          <span>UiPath</span>
+          <!-- <span>Blue Prism</span> -->
+          <span>Power Automate</span>
+        </div>
+      </div>
+
+      <!-- Software Development -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Software Development</h3>
+        <p>Full-stack developer creating robust web applications and enterprise solutions.</p>
+        <ul class="service-list">
+          <li>Web Application Development</li>
+          <li>API Development & Integration</li>
+          <li>Database Management</li>
+          <li>Cloud Solutions</li>
+        </ul>
+        <div class="tech-badges">
+          <span>JavaScript</span>
+          <span>C#</span>
+          <!-- <span>Python</span> -->
+          <span>SQL</span>
+        </div>
+      </div>
+
+      <!-- Test Automation -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-cogs"></i>
+        </div>
+        <h3>Test Automation</h3>
+        <p>Implementing comprehensive automated testing solutions for quality assurance.</p>
+        <ul class="service-list">
+          <li>Framework Development</li>
+          <li>CI/CD Integration</li>
+          <li>Performance Testing</li>
+          <li>API Testing</li>
+        </ul>
+        <div class="tech-badges">
+          <span>Selenium</span>
+          <span>Java</span>
+          <!-- <span>Cypress</span> -->
+          <!-- <span>JMeter</span> -->
+          <!-- <span>Jenkins</span> -->
+        </div>
+      </div>
+
+      <!-- Manual Testing -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-clipboard-check"></i>
+        </div>
+        <h3>Manual Testing</h3>
+        <p>Thorough quality assurance through comprehensive manual testing procedures.</p>
+        <ul class="service-list">
+          <li>Test Case Development</li>
+          <li>Defect Management</li>
+          <li>User Acceptance Testing</li>
+          <li>Quality Documentation</li>
+        </ul>
+        <div class="tech-badges">
+          <!-- <span>JIRA</span> -->
+          <!-- <span>TestRail</span> -->
+          <span>Azure DevOps</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <section id="contacts" class="contact-section">
   <div class="contact-container">
