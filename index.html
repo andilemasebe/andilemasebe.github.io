@@ -60,17 +60,36 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
+
+      <!-- <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#awards">Certifications</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul> -->
+
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+            <a href="#about" class="dropdown-trigger">About <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="#personal-info">Personal Info</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </li>
         <li><a href="#education">Education</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#awards">Certifications</a></li>
         <li><a href="#contacts">Contacts</a></li>
-      </ul>
-      <a href="#appointment" class="-btn"></a>
+    </ul>
+    
+      <!-- <a href="#appointment" class="-btn"></a> -->
       <!-- <a href="#appointment" class="appointment-btn">.</a> -->
     </nav>
   </header>
@@ -289,6 +308,122 @@
 
   </div>
 </section>
+
+
+
+
+
+<!-- Personal Info Section -->
+<section id="personal-info" class="info-section">
+  <div class="container">
+      <h2>Personal Information</h2>
+      <div class="info-grid">
+          <div class="info-card">
+              <i class="fas fa-user"></i>
+              <h3>Profile</h3>
+              <ul>
+                  <li>Name: Andile Masebe</li>
+                  <li>Location: Johannesburg, South Africa</li>
+                  <li>Email: andilemasebe@gmail.com</li>
+                  <li>Phone: +27 73 980 0705</li>
+              </ul>
+          </div>
+          <div class="info-card">
+              <i class="fas fa-globe"></i>
+              <h3>Languages</h3>
+              <ul>
+                  <li>English (Professional)</li>
+                  <li>Xhosa (Native)</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+          <div class="skill-category">
+              <h3>Network Security</h3>
+              <div class="skill-bars">
+                  <div class="skill">
+                      <span>Network Protocols</span>
+                      <div class="progress-bar" data-percent="90"></div>
+                  </div>
+                  <div class="skill">
+                      <span>Firewall Configuration</span>
+                      <div class="progress-bar" data-percent="85"></div>
+                  </div>
+              </div>
+          </div>
+          <div class="skill-category">
+              <h3>Development</h3>
+              <div class="skill-bars">
+                  <div class="skill">
+                      <span>Python</span>
+                      <div class="progress-bar" data-percent="80"></div>
+                  </div>
+                  <div class="skill">
+                      <span>JavaScript</span>
+                      <div class="progress-bar" data-percent="75"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="cert-section">
+  <div class="container">
+      <h2>Professional Certifications</h2>
+      <div class="cert-grid">
+          <div class="cert-card">
+              <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+              <h3>CompTIA Security+</h3>
+              <p>Advanced Security Certification</p>
+              <span class="cert-date">2024</span>
+              <div class="cert-badge">Credential ID: SEC+123456</div>
+          </div>
+          <div class="cert-card">
+              <div class="cert-icon"><i class="fas fa-network-wired"></i></div>
+              <h3>Cisco CCNA</h3>
+              <p>Network Administration</p>
+              <span class="cert-date">2023</span>
+              <div class="cert-badge">Credential ID: CCNA789012</div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section id="achievements" class="achievements-section">
+  <div class="container">
+      <h2>Professional Achievements</h2>
+      <div class="achievements-grid">
+          <div class="achievement-card">
+              <i class="fas fa-trophy"></i>
+              <h3>Network Security Implementation</h3>
+              <p>Successfully implemented enterprise-level security protocols reducing vulnerabilities by 75%</p>
+          </div>
+          <div class="achievement-card">
+              <i class="fas fa-award"></i>
+              <h3>Process Automation</h3>
+              <p>Developed RPA solutions resulting in 60% reduction in manual processing time</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
 
 <section id="education" class="education-section">
   <div class="education-container">
