@@ -948,21 +948,42 @@
 
 
 .contact-section {
+  position: relative;
   padding: 100px 0;
   background: #0a192f;
   color: #fff;
-  /* background-image: url('https://images.pexels.com/photos/5380603/pexels-photo-5380603.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'); */
-  background-image: url('https://images.pexels.com/photos/5380591/pexels-photo-5380591.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+     background-image: url('https://images.pexels.com/photos/11195817/pexels-photo-11195817.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'); 
+  /* background-image: url('https://media.istockphoto.com/id/172226280/photo/online-gambling.jpg?s=612x612&w=0&k=20&c=klctwvOYuHsUArGAvPt-6mX-QdFlEQJAYkDnM5hAG38='); */
+  /* background-image: url('https://images.pexels.com/photos/5380591/pexels-photo-5380591.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(8px);
+  z-index: 0;
+}
+
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 15px;
 }
 
 .contact-container h2 {
