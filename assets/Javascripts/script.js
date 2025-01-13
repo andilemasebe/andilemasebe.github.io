@@ -1026,3 +1026,88 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
+
+
+// Certificate view handling
+const viewCertButtons = document.querySelectorAll('.view-cert-btn');
+const certModal = document.querySelector('.cert-modal');
+
+viewCertButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const certId = button.getAttribute('data-cert-id');
+        const certUrl = button.getAttribute('data-cert-url');
+        
+        // Show certificate in modal or new window
+        if (certUrl) {
+            window.open(certUrl, '_blank');
+        } else {
+            certModal.classList.add('active');
+            // Load certificate content based on certId
+            loadCertificate(certId);
+        }
+    });
+});
+
+function loadCertificate(certId) {
+    // Load and display specific certificate content
+    const certContent = document.querySelector('.cert-content');
+    // Add certificate display logic here
+    // Example: certContent.innerHTML = 'Certificate Content Here';
+    function loadCertificate(certId) {
+      const certContent = document.querySelector('.cert-content');
+      const certificates = {
+          'sec001': {
+              title: 'CompTIA Security+',
+              issuer: 'CompTIA',
+              date: '2024',
+              credentialId: 'SEC+123456',
+              skills: ['Network Security', 'Cryptography', 'Risk Management'],
+              image: 'assets/images/certificates/comptia-security-plus.jpg'
+          },
+          'ccna001': {
+              title: 'Cisco CCNA',
+              issuer: 'Cisco',
+              date: '2023',
+              credentialId: 'CCNA789012',
+              skills: ['Network Administration', 'Routing', 'Switching'],
+              image: 'assets/images/certificates/cisco-ccna.jpg'
+          },
+          'rpa001': {
+              title: 'UiPath RPA Developer',
+              issuer: 'UiPath',
+              date: '2023',
+              credentialId: 'RPA345678',
+              skills: ['Process Automation', 'Workflow Design', 'Bot Development'],
+              image: 'assets/images/certificates/uipath-developer.jpg'
+          }
+      };
+  
+      const cert = certificates[certId];
+      
+      certContent.innerHTML = `
+          <div class="cert-display">
+              <div class="cert-header">
+                  <h3>${cert.title}</h3>
+                  <span class="cert-issuer">${cert.issuer}</span>
+              </div>
+              <div class="cert-image">
+                  <img src="${cert.image}" alt="${cert.title} Certificate">
+              </div>
+              <div class="cert-details">
+                  <div class="cert-info">
+                      <p><strong>Issue Date:</strong> ${cert.date}</p>
+                      <p><strong>Credential ID:</strong> ${cert.credentialId}</p>
+                  </div>
+                  <div class="cert-skills">
+                      <h4>Skills Verified</h4>
+                      <ul>
+                          ${cert.skills.map(skill => `<li>${skill}</li>`).join('')}
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      `;
+  }
+  
+}
